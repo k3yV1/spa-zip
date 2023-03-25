@@ -1,13 +1,13 @@
 const { defineConfig } = require("@vue/cli-service");
 module.exports = defineConfig({
-  publicPath: '/spa-zip/',
+  publicPath: '/spa-zip',
   transpileDependencies: true,
   devServer: {
     proxy: {
       "/api": {
-        target: "https://api.github.com",
+        target: "https://www.zipcodeapi.com",
         changeOrigin: true,
-        pathRewrite: { "^/api": "" },
+        pathRewrite: { "^/api": "/rest" },
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET",
