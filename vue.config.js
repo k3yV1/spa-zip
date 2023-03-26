@@ -5,9 +5,9 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       "/api": {
-        target: "https://www.zipcodeapi.com",
+        target: "https://www.zipcodeapi.com/rest",
         changeOrigin: true,
-        pathRewrite: { "^/api": "/rest" },
+        pathRewrite: { "^/api": "" },
         headers: {
           "Access-Control-Allow-Origin": "*",
           "Access-Control-Allow-Methods": "GET",

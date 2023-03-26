@@ -97,7 +97,7 @@ import axios from "axios";
 export default {
   data: () => ({
     zipCode: "",
-    data: null,
+    zipCodeData: null,
     ip_data: null,
     isValid: false,
     isLoading: false,
@@ -119,7 +119,7 @@ export default {
       try {
         this.isLoading = true;
         const response = await axios.get(
-          `/api/DemoOnly00d6HvDgxvGduUTQVKdad5L2qz19HGDw7tfUE2QT8NSEvk1dBdv2MUi1/info.json/${this.zipCode}/degrees`
+          `/api/1HOCSVZxZwdKwpU4nxYOrehERPfkG6F5dMgC0n0I0PwsxbOP7xAeFIwY3Mt6lT34/info.json/${this.zipCode}/degrees`
         );
         console.log("response: ", response);
         this.data = response.data;
@@ -171,14 +171,12 @@ export default {
         display: flex;
         flex-direction: column;
         gap: 15px;
-
         .spinner-block {
           display: flex;
           justify-content: center;
         }
       }
     }
-
     .search-block__search-result {
       display: flex;
       flex-direction: column;
@@ -186,23 +184,19 @@ export default {
       .search-result__title {
         text-align: center;
       }
-
       .spinner-block {
         display: flex;
         justify-content: center;
       }
     }
-
     .search-block__ip-result {
       display: flex;
       flex-direction: column;
       gap: 15px;
-
       .ip-result__title {
         text-align: center;
       }
     }
-
     .link-main {
       margin-top: 15px;
     }
